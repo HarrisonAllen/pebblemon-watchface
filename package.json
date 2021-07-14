@@ -1,0 +1,81 @@
+{
+  "name": "pebblemon-watchface",
+  "author": "Harrison Allen",
+  "version": "1.0.0",
+  "keywords": ["pebble-app"],
+  "private": true,
+  "dependencies": {},
+  "pebble": {
+    "displayName": "Pebblemon Watchface",
+    "uuid": "2b5ff5d9-75a2-4f8e-866d-015216a3e45c",
+    "sdkVersion": "3",
+    "enableMultiJS": true,
+    "targetPlatforms": [
+      "aplite",
+      "basalt",
+      "chalk",
+      "diorite"
+    ],
+    "watchapp": {
+      "watchface": true
+    },
+    "messageKeys": [
+      "dummy"
+    ],
+    "resources": {
+      "media": [
+        {
+          "menuIcon": true,
+          "type": "png",
+          "name": "IMAGE_MENU_ICON",
+          "file": "menu_icon.png"
+        },
+        {
+          "type": "raw",
+          "name": "DATA_ANIMATION_TILESHEET",
+          "file": "data/AnimationTilesheet.bin"
+        },
+        {
+          "type": "raw",
+          "name": "DATA_WORLD_TILESHEET",
+          "file": "data/WorldTilesheet.bin"
+        },
+        {
+          "type": "raw",
+          "name": "DATA_CAVE",
+          "file": "data/Cave.bin"
+        },
+        {
+          "type": "raw",
+          "name": "DATA_FOREST",
+          "file": "data/Forest.bin"
+        },
+        {
+          "type": "raw",
+          "name": "DATA_NATIONAL_PARK",
+          "file": "data/NationalPark.bin"
+        },
+        {
+          "type": "raw",
+          "name": "DATA_ROUTE_1",
+          "file": "data/Route1.bin"
+        },
+        {
+          "type": "raw",
+          "name": "DATA_ROUTE_2",
+          "file": "data/Route2.bin"
+        },
+        {
+          "type": "raw",
+          "name": "DATA_SPRITESHEET",
+          "file": "data/Spritesheet.bin"
+        },
+        {
+          "type": "raw",
+          "name": "DATA_PATH",
+          "file": "data/Path.bin"
+        }
+      ]
+    }
+  }
+}
