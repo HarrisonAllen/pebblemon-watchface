@@ -20,7 +20,7 @@
 #define TILE_BANK_ANIMS 0
 #define TILE_OFFSET_ANIMS 220
 
-#define DEMO_MODE false
+#define DEMO_MODE true
 #define RAND_SPRITES false
 
 typedef struct {

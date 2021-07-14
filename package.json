@@ -6,7 +6,7 @@
   "private": true,
   "dependencies": {},
   "pebble": {
-    "displayName": "Pebblemon Watchface",
+    "displayName": "Pebblemon Time",
     "uuid": "2b5ff5d9-75a2-4f8e-866d-015216a3e45c",
     "sdkVersion": "3",
     "enableMultiJS": true,

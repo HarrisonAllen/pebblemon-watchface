@@ -5,7 +5,7 @@
         "chalk", 
         "diorite"
     ], 
-    "displayName": "Pebblemon Watchface", 
+    "displayName": "Pebblemon Time", 
     "name": "pebblemon-watchface", 
     "messageKeys": {
         "dummy": 10000
@@ -18,8 +18,8 @@
     "appKeys": {
         "dummy": 10000
     }, 
-    "longName": "Pebblemon Watchface", 
-    "shortName": "Pebblemon Watchface", 
+    "longName": "Pebblemon Time", 
+    "shortName": "Pebblemon Time", 
     "watchapp": {
         "watchface": true
     }, 

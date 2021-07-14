@@ -17,23 +17,19 @@ static uint16_t s_player_step;
 static uint16_t s_atomic_player_x, s_atomic_player_y, s_atomic_player_step;
 
 // Frame counters
-static uint8_t s_walk_frame, s_anim_frame, s_step_frame, s_demo_frame;
+static uint8_t s_walk_frame, s_anim_frame, s_step_frame;
 
 // Movement
 static bool s_flip_walk, s_can_move;
 static uint16_t s_target_x, s_target_y;
 static uint8_t s_warp_route;
 static uint16_t s_warp_x, s_warp_y;
-static bool s_up_press_queued, s_down_press_queued;
 
 // Options
-static bool s_save_file_exists;
 static uint8_t s_player_sprite = 0;
 
 // Misc
-static bool s_select_pressed;
 static uint8_t *s_world_map;
-static bool s_clear_dialogue = true;
 static uint8_t s_cur_bg_palettes[PALETTE_BANK_SIZE];
 static bool s_game_started;
 
@@ -337,7 +333,6 @@ void Pokemon_initialize(GBC_Graphics *graphics) {
   s_atomic_player_x = s_player_x;
   s_atomic_player_y = s_player_y;
   load_game(graphics);
-  s_select_pressed = false;
   s_game_started = true;
 }
 
@@ -427,13 +422,7 @@ void Pokemon_start_animation(GBC_Graphics *graphics) {
 }
 
 static void play(GBC_Graphics *graphics) {
-  s_demo_frame = (s_demo_frame + 1) % 16;
-  if (s_demo_frame == 0 && RAND_SPRITES) {
-    s_player_sprite = (s_player_sprite + 1) % 22;
-    load_player_sprites(graphics);
-  }
   s_anim_frame = (s_anim_frame + 1) % 8;
-  // TODO: Make frame animations a 1-second callback
   if (s_anim_frame == 0) {
     animate_tiles(graphics, TILE_BANK_WORLD, s_route_num);
   }
@@ -696,7 +685,6 @@ static void save() {
     .player_step = s_atomic_player_step,
   };
   persist_write_data(SAVE_KEY, &data, sizeof(PokemonSaveData));
-  s_save_file_exists = true;
 }
 
 bool Pokemon_step(GBC_Graphics *graphics) {

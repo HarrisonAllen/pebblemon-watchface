@@ -85,7 +85,7 @@ uint8_t *palettes[] = {
 	route_2_palettes,
 };
 #else
-uint8_t bw_palette[] = {0, 0, 1, 1};
+uint8_t bw_palette[] = {0, 0, 1, 1}; // This saves some space for Aplite
 #endif
 
 uint8_t replacement_blocks[] = { // to replace the CUT trees
