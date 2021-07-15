@@ -46,13 +46,8 @@ static void time_handler(struct tm *tick_time, TimeUnits units_changed) {
   s_frame_timer = app_timer_register(FRAME_DURATION, frame_timer_handle, NULL);
   layer_mark_dirty(s_foreground_layer);
   
-  if (DEMO_MODE) {
-    s_hour = rand() % 12;
-    s_min = rand() % 60;
-  } else {
-    s_hour = tick_time->tm_hour % 12;
-    s_min = tick_time->tm_min;
-  }
+  s_hour = tick_time->tm_hour % 12;
+  s_min = tick_time->tm_min;
 }
 
 static void will_focus_handler(bool in_focus) {
@@ -155,7 +150,7 @@ static void foreground_update_proc(Layer *layer, GContext *ctx) {
   // Then draw the actual minute hand
   graphics_context_set_stroke_color(ctx, GColorBlack);
   graphics_context_set_stroke_width(ctx, 2);
-  for (int8_t i = -45; i < 46; i+=5) {
+  for (int8_t i = -45; i < 46; i+=9) {
     min_startpoint = gpoint_from_polar(s_inner_rect, GOvalScaleModeFitCircle, s_minute_angle + DEG_TO_TRIGANGLE(i));
     graphics_draw_line(ctx, min_startpoint, s_min_endpoint);
   }
@@ -171,7 +166,7 @@ static void foreground_update_proc(Layer *layer, GContext *ctx) {
   // And draw the actual hour hand
   graphics_context_set_stroke_color(ctx, PBL_IF_COLOR_ELSE(GColorRed, GColorBlack));
   graphics_context_set_stroke_width(ctx, 2);
-  for (int8_t i = -45; i < 46; i+=5) {
+  for (int8_t i = -45; i < 46; i+=9) {
     hour_startpoint = gpoint_from_polar(s_inner_rect, GOvalScaleModeFitCircle, s_hour_angle + DEG_TO_TRIGANGLE(i));
     graphics_draw_line(ctx, hour_startpoint, s_hour_endpoint);
   }
@@ -216,30 +211,25 @@ static void window_unload(Window *window) {
 }
 
 static void init() {
-  // Grab the current time so that there's no loading
-  time_t unadjusted_time = time(NULL);
-  struct tm *cur_time = localtime(&unadjusted_time);
-  if (DEMO_MODE) {
-    s_hour = rand() % 12;
-    s_min = rand() % 60;
-  } else {
-    s_hour = cur_time->tm_hour % 12;
-    s_min = cur_time->tm_min;
-  }
-  
   // go ahead and calculate these ahead of time, so we don't waste processor time later
   s_screen_rect = SCREEN_BOUNDS_SQUARE;
   s_adjusted_screen_rect = GRect(s_screen_rect.origin.x, s_screen_rect.origin.y, s_screen_rect.size.w+1, s_screen_rect.size.h+1);
   s_hour_rect = GRect(s_screen_rect.origin.x + 22, s_screen_rect.origin.y + 22, 100, 100);
   s_inner_rect = GRect(s_screen_rect.origin.x + 56, s_screen_rect.origin.y + 57, 34, 34);
   s_inner_rect_white = GRect(s_screen_rect.origin.x + 55, s_screen_rect.origin.y + 56, 36, 36);
+
+  // Grab the current time so that there's no loading
+  time_t unadjusted_time = time(NULL);
+  struct tm *cur_time = localtime(&unadjusted_time);
+  s_hour = cur_time->tm_hour % 12;
+  s_min = cur_time->tm_min;
 }
 
 void main_window_push() {
-  init();
   if(!s_window) {
-    tick_timer_service_subscribe(MINUTE_UNIT, time_handler);
     s_window = window_create();
+    init();
+    tick_timer_service_subscribe(MINUTE_UNIT, time_handler);
     accel_tap_service_subscribe(accel_tap_handler);
     app_focus_service_subscribe(will_focus_handler);
     window_set_window_handlers(s_window, (WindowHandlers) {
