@@ -62,17 +62,31 @@ static void load_tiles(GBC_Graphics *graphics, uint8_t bg_root_x, uint8_t bg_roo
   }
 }
 
-static void load_screen(GBC_Graphics *graphics) {
-  for (uint8_t i = 0; i < 8; i++) {
-  #if defined(PBL_COLOR)
-    GBC_Graphics_set_bg_palette_array(graphics, i, &palettes[s_route_num][i*PALETTE_SIZE]);
-  #else
-    GBC_Graphics_set_bg_palette_array(graphics, i, bw_palette);
-  #endif
-  }
+static void set_bg_palettes(GBC_Graphics *graphics) {
 #if defined(PBL_COLOR)
-  GBC_Graphics_set_sprite_palette_array(graphics, 4, &palettes[s_route_num][2*PALETTE_SIZE]);
+  time_t unadjusted_time = time(NULL);
+  struct tm *cur_time = localtime(&unadjusted_time);
+  uint8_t hour = cur_time->tm_hour;
+  uint8_t *palette;
+  if (hour >= 4 && hour < 10) {
+    palette = overworld_morning_palettes[s_route_num];
+  } else if (hour >= 10 && hour < 18) {
+    palette = overworld_day_palettes[s_route_num];
+  } else {
+    palette = overworld_night_palettes[s_route_num];
+  }
+  for (uint8_t i = 0; i < 8; i++) {
+    GBC_Graphics_set_bg_palette_array(graphics, i, &palette[i*PALETTE_SIZE]);
+  }
+#else
+  for (uint8_t i = 0; i < 8; i++) {
+    GBC_Graphics_set_bg_palette_array(graphics, i, bw_palette);
+  }
 #endif
+}
+
+static void load_screen(GBC_Graphics *graphics) {
+  set_bg_palettes(graphics);
   GBC_Graphics_copy_all_bg_palettes(graphics, s_cur_bg_palettes);
   GBC_Graphics_bg_set_scroll_pos(graphics, 0, 0);
   uint8_t bg_root_x = GBC_Graphics_bg_get_scroll_x(graphics) >> 3;
@@ -286,6 +300,37 @@ static void lerp_palette(uint8_t *start, uint8_t *end, uint8_t index, uint8_t *o
 }
 #endif
 
+static size_t get_num_locations() {
+  ResHandle data_handle = resource_get_handle(RESOURCE_ID_DATA_LOCATIONS);
+  return resource_size(data_handle);
+}
+
+static void load_location_data_to_buffer(uint16_t step_index, uint8_t *buffer) {
+  ResHandle data_handle = resource_get_handle(RESOURCE_ID_DATA_LOCATIONS);
+  size_t res_size = resource_size(data_handle);
+  uint16_t data_offset = (step_index * 3) % res_size;
+  resource_load_byte_range(data_handle, data_offset, buffer, 3);
+}
+
+static void set_player_direction() {
+  uint8_t cur_loc_buffer[3], target_loc_buffer[3];
+  load_location_data_to_buffer(s_player_step, cur_loc_buffer);
+  load_location_data_to_buffer(s_player_step+1, target_loc_buffer);
+  if (cur_loc_buffer[0] != target_loc_buffer[0]) {
+    load_location_data_to_buffer(s_player_step-1, cur_loc_buffer);
+    load_location_data_to_buffer(s_player_step, target_loc_buffer);
+  }
+  if (cur_loc_buffer[1] < target_loc_buffer[1]) {
+    s_player_direction = D_RIGHT;
+  } else if (cur_loc_buffer[1] > target_loc_buffer[1]) {
+    s_player_direction = D_LEFT;
+  } else if (cur_loc_buffer[2] < target_loc_buffer[2]) {
+    s_player_direction = D_DOWN;
+  } else if (cur_loc_buffer[2] > target_loc_buffer[2]) {
+    s_player_direction = D_UP;
+  } 
+}
+
 void Pokemon_initialize(GBC_Graphics *graphics) {
   GBC_Graphics_set_screen_bounds(graphics, SCREEN_BOUNDS_SQUARE);
   GBC_Graphics_window_set_offset_pos(graphics, 0, 168);
@@ -294,13 +339,7 @@ void Pokemon_initialize(GBC_Graphics *graphics) {
       GBC_Graphics_oam_hide_sprite(graphics, i);
   }
 
-  for (uint8_t i = 0; i < 8; i++) {
-  #if defined(PBL_COLOR)
-    GBC_Graphics_set_bg_palette_array(graphics, i, &palettes[s_route_num][i*PALETTE_SIZE]);
-  #else
-    GBC_Graphics_set_bg_palette_array(graphics, i, bw_palette);
-  #endif
-  }
+  set_bg_palettes(graphics);
 
   init_anim_tiles(graphics, TILE_BANK_ANIMS, TILE_OFFSET_ANIMS);
 
@@ -318,22 +357,27 @@ void Pokemon_initialize(GBC_Graphics *graphics) {
 
   PokemonSaveData data;
   if (load(&data)) {
-    s_route_num = data.route_num;
-    s_player_x = data.player_x;
-    s_player_y = data.player_y;
-    s_player_direction = data.player_direction;
     s_player_sprite = data.player_sprite;
     s_player_step = data.player_step;
   } else {
-    s_player_x = PLAYER_ORIGIN_X;
-    s_player_y = PLAYER_ORIGIN_Y;
     new_player_sprites(graphics);
   }
+
+  if (DEMO_MODE){
+    s_player_step = rand()%(get_num_locations()/3);
+  }
+  uint8_t loc_buffer[3];
+  load_location_data_to_buffer(s_player_step, loc_buffer);
+  set_player_direction();
+  s_route_num = loc_buffer[0];
+  s_player_x = loc_buffer[1] << 4;
+  s_player_y = loc_buffer[2] << 4;
   s_atomic_player_step = s_player_step;
   s_atomic_player_x = s_player_x;
   s_atomic_player_y = s_player_y;
   load_game(graphics);
   s_game_started = true;
+  // something isn't quite right
 }
 
 static void load_blocks_in_direction(GBC_Graphics *graphics, PlayerDirection direction) {
@@ -403,29 +447,32 @@ static void set_bg_palettes_to_color(GBC_Graphics *graphics, uint8_t color) {
 }
 #endif
 
-static void turn_player() {
-  ResHandle path_handle = resource_get_handle(RESOURCE_ID_DATA_PATH);
-  size_t res_size = resource_size(path_handle);
-  uint16_t data_offset = s_player_step / 4;
-  uint8_t buffer[1];
-  resource_load_byte_range(path_handle, data_offset, buffer, 1);
-  s_player_direction = (buffer[0] >> (2 * (s_player_step % 4))) & 0b11;
-  s_player_step = (s_player_step + 1) % (res_size * 4);
+static void verify_location(GBC_Graphics *graphics) {
+  uint8_t loc_buffer[3];
+  load_location_data_to_buffer(s_player_step, loc_buffer);
+  uint8_t route_num = loc_buffer[0];
+  uint16_t player_x = loc_buffer[1] << 4;
+  uint16_t player_y = loc_buffer[2] << 4;
+  if (route_num != s_route_num || player_x != s_player_x || player_y != s_player_y) {
+    s_route_num = route_num;
+    s_player_x = player_x;
+    s_player_y = player_y;
+    load_game(graphics);
+  }
 }
 
-
 void Pokemon_start_animation(GBC_Graphics *graphics) {
-  if (s_player_mode == P_STAND) { 
-    turn_player();
+  if (s_player_mode == P_STAND) {
+    verify_location(graphics);
+    set_player_direction();
+    set_bg_palettes(graphics);
+    animate_tiles(graphics, TILE_BANK_WORLD, s_route_num);
+    s_player_step = (s_player_step + 1) % (get_num_locations()/3);
     s_step_frame = 0;
   }
 }
 
 static void play(GBC_Graphics *graphics) {
-  s_anim_frame = (s_anim_frame + 1) % 8;
-  if (s_anim_frame == 0) {
-    animate_tiles(graphics, TILE_BANK_WORLD, s_route_num);
-  }
   if (s_player_mode == P_STAND) {
     s_target_x = s_player_x + direction_to_point(s_player_direction).x * (TILE_WIDTH * 2);
     s_target_y = s_player_y + direction_to_point(s_player_direction).y * (TILE_HEIGHT * 2);
@@ -676,12 +723,7 @@ static void play(GBC_Graphics *graphics) {
 
 static void save() {
   PokemonSaveData data = (PokemonSaveData) {
-    .route_num = s_route_num,
-    .player_x = s_atomic_player_x,
-    .player_y = s_atomic_player_y,
-    .player_direction = s_player_direction,
     .player_sprite = s_player_sprite,
-    .last_save = time(NULL),
     .player_step = s_atomic_player_step,
   };
   persist_write_data(SAVE_KEY, &data, sizeof(PokemonSaveData));

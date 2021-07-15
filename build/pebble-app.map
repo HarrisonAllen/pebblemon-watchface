@@ -1370,7 +1370,7 @@ LOAD /home/linksky/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc
  .note.gnu.build-id
                 0x0000000000000084       0x24 linker stubs
 
-.text           0x00000000000000a8     0x2be6
+.text           0x00000000000000a8     0x2c42
  *(.text)
  .text          0x00000000000000a8       0x14 /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
  *(.text.*)
@@ -1498,485 +1498,488 @@ LOAD /home/linksky/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc
                 0x000000000000122c       0x48 src/c/modules/pokemon/animations.c.33.o
                 0x000000000000122c                init_anim_tiles
  .text.animate_tiles
-                0x0000000000001274       0xc8 src/c/modules/pokemon/animations.c.33.o
+                0x0000000000001274      0x104 src/c/modules/pokemon/animations.c.33.o
                 0x0000000000001274                animate_tiles
  .text.direction_to_point
-                0x000000000000133c       0x4e src/c/modules/pokemon/pokemon.c.33.o
- *fill*         0x000000000000138a        0x2 
+                0x0000000000001378       0x4e src/c/modules/pokemon/pokemon.c.33.o
+ *fill*         0x00000000000013c6        0x2 
  .text.get_block_type
-                0x000000000000138c       0x54 src/c/modules/pokemon/pokemon.c.33.o
+                0x00000000000013c8       0x54 src/c/modules/pokemon/pokemon.c.33.o
  .text.load_player_sprites
-                0x00000000000013e0       0x34 src/c/modules/pokemon/pokemon.c.33.o
+                0x000000000000141c       0x34 src/c/modules/pokemon/pokemon.c.33.o
  .text.render_items
-                0x0000000000001414       0xd0 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000001450       0xd0 src/c/modules/pokemon/pokemon.c.33.o
  .text.set_bg_palettes
-                0x00000000000014e4       0x24 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000001520       0x24 src/c/modules/pokemon/pokemon.c.33.o
  .text.load_tiles
-                0x0000000000001508       0xf4 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000001544       0xf4 src/c/modules/pokemon/pokemon.c.33.o
  .text.load_blocks_in_direction
-                0x00000000000015fc       0x98 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000001638       0x98 src/c/modules/pokemon/pokemon.c.33.o
  .text.load_location_data_to_buffer
-                0x0000000000001694       0x2c src/c/modules/pokemon/pokemon.c.33.o
+                0x00000000000016d0       0x2c src/c/modules/pokemon/pokemon.c.33.o
  .text.set_player_direction
-                0x00000000000016c0       0x8c src/c/modules/pokemon/pokemon.c.33.o
+                0x00000000000016fc       0x8c src/c/modules/pokemon/pokemon.c.33.o
  .text.set_player_sprites
-                0x000000000000174c       0x64 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000001788       0x64 src/c/modules/pokemon/pokemon.c.33.o
  .text.load_resources
-                0x00000000000017b0      0x39c src/c/modules/pokemon/pokemon.c.33.o
+                0x00000000000017ec      0x39c src/c/modules/pokemon/pokemon.c.33.o
  .text.set_bg_palettes_to_color.constprop.1
-                0x0000000000001b4c       0x2c src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000001b88       0x2c src/c/modules/pokemon/pokemon.c.33.o
  .text.Pokemon_initialize
-                0x0000000000001b78      0x190 src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000001b78                Pokemon_initialize
+                0x0000000000001bb4      0x1b0 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000001bb4                Pokemon_initialize
  .text.Pokemon_start_animation
-                0x0000000000001d08      0x100 src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000001d08                Pokemon_start_animation
+                0x0000000000001d64      0x100 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000001d64                Pokemon_start_animation
  .text.Pokemon_step
-                0x0000000000001e08      0xa1c src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000001e08                Pokemon_step
+                0x0000000000001e64      0xa1c src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000001e64                Pokemon_step
  .text.Pokemon_handle_tap
-                0x0000000000002824       0x4c src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002824                Pokemon_handle_tap
+                0x0000000000002880       0x4c src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002880                Pokemon_handle_tap
  .text.Pokemon_deinitialize
-                0x0000000000002870       0x4c src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002870                Pokemon_deinitialize
+                0x00000000000028cc       0x4c src/c/modules/pokemon/pokemon.c.33.o
+                0x00000000000028cc                Pokemon_deinitialize
  .text.accel_tap_service_subscribe
-                0x00000000000028bc        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000028bc                accel_tap_service_subscribe
+                0x0000000000002918        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002918                accel_tap_service_subscribe
  .text.app_event_loop
-                0x00000000000028c8        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000028c8                app_event_loop
+                0x0000000000002924        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002924                app_event_loop
  .text.app_timer_cancel
-                0x00000000000028d4        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000028d4                app_timer_cancel
+                0x0000000000002930        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002930                app_timer_cancel
  .text.app_timer_register
-                0x00000000000028e0        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000028e0                app_timer_register
- .text.free     0x00000000000028ec        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000028ec                free
+                0x000000000000293c        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x000000000000293c                app_timer_register
+ .text.free     0x0000000000002948        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002948                free
  .text.graphics_draw_circle
-                0x00000000000028f8        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000028f8                graphics_draw_circle
+                0x0000000000002954        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002954                graphics_draw_circle
  .text.graphics_draw_line
-                0x0000000000002904        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002904                graphics_draw_line
+                0x0000000000002960        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002960                graphics_draw_line
  .text.graphics_fill_circle
-                0x0000000000002910        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002910                graphics_fill_circle
+                0x000000000000296c        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x000000000000296c                graphics_fill_circle
  .text.layer_add_child
-                0x000000000000291c        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x000000000000291c                layer_add_child
+                0x0000000000002978        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002978                layer_add_child
  .text.layer_create
-                0x0000000000002928        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002928                layer_create
+                0x0000000000002984        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002984                layer_create
  .text.layer_create_with_data
-                0x0000000000002934        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002934                layer_create_with_data
+                0x0000000000002990        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002990                layer_create_with_data
  .text.layer_destroy
-                0x0000000000002940        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002940                layer_destroy
+                0x000000000000299c        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x000000000000299c                layer_destroy
  .text.layer_get_bounds
-                0x000000000000294c        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x000000000000294c                layer_get_bounds
+                0x00000000000029a8        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x00000000000029a8                layer_get_bounds
  .text.layer_get_data
-                0x0000000000002958        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002958                layer_get_data
+                0x00000000000029b4        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x00000000000029b4                layer_get_data
  .text.layer_mark_dirty
-                0x0000000000002964        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002964                layer_mark_dirty
+                0x00000000000029c0        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x00000000000029c0                layer_mark_dirty
  .text.layer_set_frame
-                0x0000000000002970        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002970                layer_set_frame
+                0x00000000000029cc        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x00000000000029cc                layer_set_frame
  .text.layer_set_update_proc
-                0x000000000000297c        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x000000000000297c                layer_set_update_proc
- .text.malloc   0x0000000000002988        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002988                malloc
- .text.memcpy   0x0000000000002994        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002994                memcpy
- .text.memset   0x00000000000029a0        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000029a0                memset
- .text.rand     0x00000000000029ac        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000029ac                rand
+                0x00000000000029d8        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x00000000000029d8                layer_set_update_proc
+ .text.malloc   0x00000000000029e4        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x00000000000029e4                malloc
+ .text.memcpy   0x00000000000029f0        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x00000000000029f0                memcpy
+ .text.memset   0x00000000000029fc        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x00000000000029fc                memset
+ .text.rand     0x0000000000002a08        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002a08                rand
  .text.resource_get_handle
-                0x00000000000029b8        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000029b8                resource_get_handle
+                0x0000000000002a14        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002a14                resource_get_handle
  .text.resource_load
-                0x00000000000029c4        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000029c4                resource_load
+                0x0000000000002a20        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002a20                resource_load
  .text.resource_load_byte_range
-                0x00000000000029d0        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000029d0                resource_load_byte_range
+                0x0000000000002a2c        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002a2c                resource_load_byte_range
  .text.resource_size
-                0x00000000000029dc        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000029dc                resource_size
+                0x0000000000002a38        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002a38                resource_size
  .text.tick_timer_service_subscribe
-                0x00000000000029e8        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000029e8                tick_timer_service_subscribe
+                0x0000000000002a44        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002a44                tick_timer_service_subscribe
  .text.window_create
-                0x00000000000029f4        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000029f4                window_create
+                0x0000000000002a50        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002a50                window_create
  .text.window_destroy
-                0x0000000000002a00        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002a00                window_destroy
+                0x0000000000002a5c        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002a5c                window_destroy
  .text.window_get_root_layer
-                0x0000000000002a0c        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002a0c                window_get_root_layer
+                0x0000000000002a68        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002a68                window_get_root_layer
  .text.window_set_window_handlers
-                0x0000000000002a18        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002a18                window_set_window_handlers
+                0x0000000000002a74        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002a74                window_set_window_handlers
  .text.window_stack_push
-                0x0000000000002a24        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002a24                window_stack_push
+                0x0000000000002a80        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002a80                window_stack_push
  .text.app_focus_service_subscribe
-                0x0000000000002a30        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002a30                app_focus_service_subscribe
+                0x0000000000002a8c        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002a8c                app_focus_service_subscribe
  .text.persist_read_data
-                0x0000000000002a3c        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002a3c                persist_read_data
+                0x0000000000002a98        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002a98                persist_read_data
  .text.persist_write_data
-                0x0000000000002a48        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002a48                persist_write_data
+                0x0000000000002aa4        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002aa4                persist_write_data
  .text.graphics_release_frame_buffer
-                0x0000000000002a54        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002a54                graphics_release_frame_buffer
+                0x0000000000002ab0        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002ab0                graphics_release_frame_buffer
  .text.graphics_context_set_fill_color
-                0x0000000000002a60        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002a60                graphics_context_set_fill_color
+                0x0000000000002abc        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002abc                graphics_context_set_fill_color
  .text.graphics_context_set_stroke_color
-                0x0000000000002a6c        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002a6c                graphics_context_set_stroke_color
+                0x0000000000002ac8        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002ac8                graphics_context_set_stroke_color
  .text.window_set_background_color
-                0x0000000000002a78        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002a78                window_set_background_color
+                0x0000000000002ad4        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002ad4                window_set_background_color
  .text.localtime
-                0x0000000000002a84        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002a84                localtime
+                0x0000000000002ae0        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002ae0                localtime
  .text.graphics_capture_frame_buffer
-                0x0000000000002a90        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002a90                graphics_capture_frame_buffer
+                0x0000000000002aec        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002aec                graphics_capture_frame_buffer
  .text.graphics_context_set_antialiased
-                0x0000000000002a9c        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002a9c                graphics_context_set_antialiased
+                0x0000000000002af8        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002af8                graphics_context_set_antialiased
  .text.graphics_context_set_stroke_width
-                0x0000000000002aa8        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002aa8                graphics_context_set_stroke_width
- .text.time     0x0000000000002ab4        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002ab4                time
+                0x0000000000002b04        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002b04                graphics_context_set_stroke_width
+ .text.time     0x0000000000002b10        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002b10                time
  .text.gbitmap_get_data_row_info
-                0x0000000000002ac0        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002ac0                gbitmap_get_data_row_info
+                0x0000000000002b1c        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002b1c                gbitmap_get_data_row_info
  .text.gpoint_from_polar
-                0x0000000000002acc        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002acc                gpoint_from_polar
+                0x0000000000002b28        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002b28                gpoint_from_polar
  .text.graphics_fill_radial
-                0x0000000000002ad8        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002ad8                graphics_fill_radial
+                0x0000000000002b34        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002b34                graphics_fill_radial
  .text.grect_centered_from_polar
-                0x0000000000002ae4        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000002ae4                grect_centered_from_polar
+                0x0000000000002b40        0xc /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000002b40                grect_centered_from_polar
  *(.rodata)
- .rodata        0x0000000000002af0        0xc src/c/modules/main_window.c.33.o
- .rodata        0x0000000000002afc        0x8 src/c/modules/pokemon/pokemon.c.33.o
+ .rodata        0x0000000000002b4c        0xc src/c/modules/main_window.c.33.o
+ .rodata        0x0000000000002b58        0x8 src/c/modules/pokemon/pokemon.c.33.o
  *(.rodata*)
  .rodata.pokemon_trainer_sprite_offsets
-                0x0000000000002b04        0x8 src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002b04                pokemon_trainer_sprite_offsets
- .rodata.items  0x0000000000002b0c       0x60 src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002b0c                items
+                0x0000000000002b60        0x8 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002b60                pokemon_trainer_sprite_offsets
+ .rodata.items  0x0000000000002b68       0x60 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002b68                items
  .rodata.NP_DOOR_1
-                0x0000000000002b6c        0xe src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002b6c                NP_DOOR_1
+                0x0000000000002bc8        0xe src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002bc8                NP_DOOR_1
  .rodata.NP_DOOR_2
-                0x0000000000002b7a        0xe src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002b7a                NP_DOOR_2
+                0x0000000000002bd6        0xe src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002bd6                NP_DOOR_2
  .rodata.NP_DOOR_3
-                0x0000000000002b88        0xe src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002b88                NP_DOOR_3
+                0x0000000000002be4        0xe src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002be4                NP_DOOR_3
  .rodata.NP_DOOR_4
-                0x0000000000002b96        0xe src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002b96                NP_DOOR_4
+                0x0000000000002bf2        0xe src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002bf2                NP_DOOR_4
  .rodata.NP_DOOR_5
-                0x0000000000002ba4        0xe src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002ba4                NP_DOOR_5
+                0x0000000000002c00        0xe src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002c00                NP_DOOR_5
  .rodata.FO_DOOR_1
-                0x0000000000002bb2        0xe src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002bb2                FO_DOOR_1
- .rodata.FO_DOOR_2
-                0x0000000000002bc0        0xe src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002bc0                FO_DOOR_2
- .rodata.FO_DOOR_3
-                0x0000000000002bce        0xe src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002bce                FO_DOOR_3
- .rodata.FO_DOOR_4
-                0x0000000000002bdc        0xe src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002bdc                FO_DOOR_4
- .rodata.R2_DOOR_2
-                0x0000000000002bea        0xe src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002bea                R2_DOOR_2
- .rodata.R2_DOOR_3
-                0x0000000000002bf8        0xe src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002bf8                R2_DOOR_3
- .rodata.FO_TREE_1
-                0x0000000000002c06        0x8 src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002c06                FO_TREE_1
- .rodata.R1_DOOR_1
                 0x0000000000002c0e        0xe src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002c0e                R1_DOOR_1
- .rodata.R1_DOOR_2
+                0x0000000000002c0e                FO_DOOR_1
+ .rodata.FO_DOOR_2
                 0x0000000000002c1c        0xe src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002c1c                R1_DOOR_2
- .rodata.R1_DOOR_3
+                0x0000000000002c1c                FO_DOOR_2
+ .rodata.FO_DOOR_3
                 0x0000000000002c2a        0xe src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002c2a                R1_DOOR_3
- .rodata.R1_DOOR_4
+                0x0000000000002c2a                FO_DOOR_3
+ .rodata.FO_DOOR_4
                 0x0000000000002c38        0xe src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002c38                R1_DOOR_4
- .rodata.R1_DOOR_5
+                0x0000000000002c38                FO_DOOR_4
+ .rodata.R2_DOOR_2
                 0x0000000000002c46        0xe src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002c46                R1_DOOR_5
+                0x0000000000002c46                R2_DOOR_2
+ .rodata.R2_DOOR_3
+                0x0000000000002c54        0xe src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002c54                R2_DOOR_3
+ .rodata.FO_TREE_1
+                0x0000000000002c62        0x8 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002c62                FO_TREE_1
+ .rodata.R1_DOOR_1
+                0x0000000000002c6a        0xe src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002c6a                R1_DOOR_1
+ .rodata.R1_DOOR_2
+                0x0000000000002c78        0xe src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002c78                R1_DOOR_2
+ .rodata.R1_DOOR_3
+                0x0000000000002c86        0xe src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002c86                R1_DOOR_3
+ .rodata.R1_DOOR_4
+                0x0000000000002c94        0xe src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002c94                R1_DOOR_4
+ .rodata.R1_DOOR_5
+                0x0000000000002ca2        0xe src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002ca2                R1_DOOR_5
  .rodata.R1_TREE_1
-                0x0000000000002c54        0x8 src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002c54                R1_TREE_1
+                0x0000000000002cb0        0x8 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002cb0                R1_TREE_1
  .rodata.R1_TREE_2
-                0x0000000000002c5c        0x8 src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002c5c                R1_TREE_2
+                0x0000000000002cb8        0x8 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002cb8                R1_TREE_2
  .rodata.CA_DOOR_1
-                0x0000000000002c64        0xe src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002c64                CA_DOOR_1
+                0x0000000000002cc0        0xe src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002cc0                CA_DOOR_1
  .rodata.CA_DOOR_2
-                0x0000000000002c72        0xe src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002c72                CA_DOOR_2
+                0x0000000000002cce        0xe src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002cce                CA_DOOR_2
  .rodata.R2_DOOR_1
-                0x0000000000002c80        0xe src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002c80                R2_DOOR_1
+                0x0000000000002cdc        0xe src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002cdc                R2_DOOR_1
 
-.glue_7         0x0000000000002c90        0x0
+.glue_7         0x0000000000002cec        0x0
  .glue_7        0x0000000000000000        0x0 linker stubs
 
-.glue_7t        0x0000000000002c90        0x0
+.glue_7t        0x0000000000002cec        0x0
  .glue_7t       0x0000000000000000        0x0 linker stubs
 
-.vfp11_veneer   0x0000000000002c90        0x0
+.vfp11_veneer   0x0000000000002cec        0x0
  .vfp11_veneer  0x0000000000000000        0x0 linker stubs
 
-.v4_bx          0x0000000000002c90        0x0
+.v4_bx          0x0000000000002cec        0x0
  .v4_bx         0x0000000000000000        0x0 linker stubs
 
-.iplt           0x0000000000002c90        0x0
+.iplt           0x0000000000002cec        0x0
  .iplt          0x0000000000000000        0x0 /home/linksky/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.rel.dyn        0x0000000000002c90        0x0
+.rel.dyn        0x0000000000002cec        0x0
  .rel.iplt      0x0000000000000000        0x0 /home/linksky/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.data           0x0000000000002c90      0x919
+.data           0x0000000000002cec      0x931
  *(.data)
- .data          0x0000000000002c90        0x0 /home/linksky/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
- .data          0x0000000000002c90        0x4 /home/linksky/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
-                0x0000000000002c90                __dso_handle
- .data          0x0000000000002c94        0x0 src/c/main.c.33.o
- .data          0x0000000000002c94        0x0 src/c/modules/main_window.c.33.o
- .data          0x0000000000002c94        0x0 src/c/modules/pebble-gbc-graphics/pebble-gbc-graphics.c.33.o
- .data          0x0000000000002c94        0x0 src/c/modules/pokemon/animations.c.33.o
- .data          0x0000000000002c94        0x0 src/c/modules/pokemon/pokemon.c.33.o
- .data          0x0000000000002c94        0x0 aplite/appinfo.auto.c.33.o
- .data          0x0000000000002c94        0x0 aplite/src/resource_ids.auto.c.33.o
- .data          0x0000000000002c94        0x0 src/message_keys.auto.c.33.o
- .data          0x0000000000002c94        0x0 /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
- .data          0x0000000000002c94        0x0 /home/linksky/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
- .data          0x0000000000002c94        0x0 /home/linksky/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
+ .data          0x0000000000002cec        0x0 /home/linksky/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
+ .data          0x0000000000002cec        0x4 /home/linksky/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
+                0x0000000000002cec                __dso_handle
+ .data          0x0000000000002cf0        0x0 src/c/main.c.33.o
+ .data          0x0000000000002cf0        0x0 src/c/modules/main_window.c.33.o
+ .data          0x0000000000002cf0        0x0 src/c/modules/pebble-gbc-graphics/pebble-gbc-graphics.c.33.o
+ .data          0x0000000000002cf0        0x0 src/c/modules/pokemon/animations.c.33.o
+ .data          0x0000000000002cf0        0x0 src/c/modules/pokemon/pokemon.c.33.o
+ .data          0x0000000000002cf0        0x0 aplite/appinfo.auto.c.33.o
+ .data          0x0000000000002cf0        0x0 aplite/src/resource_ids.auto.c.33.o
+ .data          0x0000000000002cf0        0x0 src/message_keys.auto.c.33.o
+ .data          0x0000000000002cf0        0x0 /home/linksky/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+ .data          0x0000000000002cf0        0x0 /home/linksky/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
+ .data          0x0000000000002cf0        0x0 /home/linksky/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
  *(.data.*)
- .data.main_water_palettes
-                0x0000000000002c94       0x10 src/c/modules/pokemon/animations.c.33.o
-                0x0000000000002c94                main_water_palettes
+ .data.night_water_palettes
+                0x0000000000002cf0       0x10 src/c/modules/pokemon/animations.c.33.o
+                0x0000000000002cf0                night_water_palettes
  .data.tile_water_cave_swaps
-                0x0000000000002ca4       0x18 src/c/modules/pokemon/animations.c.33.o
-                0x0000000000002ca4                tile_water_cave_swaps
+                0x0000000000002d00       0x18 src/c/modules/pokemon/animations.c.33.o
+                0x0000000000002d00                tile_water_cave_swaps
  .data.rel.anim_tiles
-                0x0000000000002cbc       0x10 src/c/modules/pokemon/animations.c.33.o
-                0x0000000000002cbc                anim_tiles
+                0x0000000000002d18       0x10 src/c/modules/pokemon/animations.c.33.o
+                0x0000000000002d18                anim_tiles
  .data.tile_flower_swaps
-                0x0000000000002ccc       0x18 src/c/modules/pokemon/animations.c.33.o
-                0x0000000000002ccc                tile_flower_swaps
+                0x0000000000002d28       0x18 src/c/modules/pokemon/animations.c.33.o
+                0x0000000000002d28                tile_flower_swaps
  .data.tile_fountain_swaps
-                0x0000000000002ce4       0x18 src/c/modules/pokemon/animations.c.33.o
-                0x0000000000002ce4                tile_fountain_swaps
- .data.rel.water_palettes
-                0x0000000000002cfc        0x8 src/c/modules/pokemon/animations.c.33.o
-                0x0000000000002cfc                water_palettes
- .data.tile_water_swaps
-                0x0000000000002d04       0x18 src/c/modules/pokemon/animations.c.33.o
-                0x0000000000002d04                tile_water_swaps
- .data.cave_water_palettes
-                0x0000000000002d1c       0x10 src/c/modules/pokemon/animations.c.33.o
-                0x0000000000002d1c                cave_water_palettes
+                0x0000000000002d40       0x18 src/c/modules/pokemon/animations.c.33.o
+                0x0000000000002d40                tile_fountain_swaps
  .data.anim_tile_offsets
-                0x0000000000002d2c        0x4 src/c/modules/pokemon/animations.c.33.o
-                0x0000000000002d2c                anim_tile_offsets
+                0x0000000000002d58        0x4 src/c/modules/pokemon/animations.c.33.o
+                0x0000000000002d58                anim_tile_offsets
+ .data.tile_water_swaps
+                0x0000000000002d5c       0x18 src/c/modules/pokemon/animations.c.33.o
+                0x0000000000002d5c                tile_water_swaps
+ .data.cave_water_palettes
+                0x0000000000002d74       0x10 src/c/modules/pokemon/animations.c.33.o
+                0x0000000000002d74                cave_water_palettes
+ .data.day_water_palettes
+                0x0000000000002d84       0x10 src/c/modules/pokemon/animations.c.33.o
+                0x0000000000002d84                day_water_palettes
+ .data.morning_water_palettes
+                0x0000000000002d94       0x10 src/c/modules/pokemon/animations.c.33.o
+                0x0000000000002d94                morning_water_palettes
  .data.rel.chunks
-                0x0000000000002d30       0x14 src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002d30                chunks
+                0x0000000000002da4       0x14 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002da4                chunks
  .data.s_player_direction
-                0x0000000000002d44        0x1 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002db8        0x1 src/c/modules/pokemon/pokemon.c.33.o
  .data.route_dims
-                0x0000000000002d45        0xa src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002d45                route_dims
+                0x0000000000002db9        0xa src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002db9                route_dims
  .data.forest_chunks
-                0x0000000000002d4f       0x9c src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002d4f                forest_chunks
+                0x0000000000002dc3       0x9c src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002dc3                forest_chunks
  .data.cave_blocks
-                0x0000000000002deb       0x6c src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002deb                cave_blocks
+                0x0000000000002e5f       0x6c src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002e5f                cave_blocks
  .data.national_park_blocks
-                0x0000000000002e57      0x158 src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002e57                national_park_blocks
+                0x0000000000002ecb      0x158 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000002ecb                national_park_blocks
  .data.cave_block_types
-                0x0000000000002faf       0x1b src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002faf                cave_block_types
+                0x0000000000003023       0x1b src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000003023                cave_block_types
  .data.route_1_chunks
-                0x0000000000002fca       0x94 src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000002fca                route_1_chunks
- *fill*         0x000000000000305e        0x2 
+                0x000000000000303e       0x94 src/c/modules/pokemon/pokemon.c.33.o
+                0x000000000000303e                route_1_chunks
+ *fill*         0x00000000000030d2        0x2 
  .data.rel.blocks
-                0x0000000000003060       0x14 src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000003060                blocks
+                0x00000000000030d4       0x14 src/c/modules/pokemon/pokemon.c.33.o
+                0x00000000000030d4                blocks
  .data.route_2_block_types
-                0x0000000000003074       0x29 src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000003074                route_2_block_types
+                0x00000000000030e8       0x29 src/c/modules/pokemon/pokemon.c.33.o
+                0x00000000000030e8                route_2_block_types
  .data.jump_offsets
-                0x000000000000309d       0x10 src/c/modules/pokemon/pokemon.c.33.o
-                0x000000000000309d                jump_offsets
- *fill*         0x00000000000030ad        0x3 
+                0x0000000000003111       0x10 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000003111                jump_offsets
+ *fill*         0x0000000000003121        0x3 
  .data.rel.block_types
-                0x00000000000030b0       0x14 src/c/modules/pokemon/pokemon.c.33.o
-                0x00000000000030b0                block_types
+                0x0000000000003124       0x14 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000003124                block_types
  .data.rel.objects
-                0x00000000000030c4       0x58 src/c/modules/pokemon/pokemon.c.33.o
-                0x00000000000030c4                objects
+                0x0000000000003138       0x58 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000003138                objects
  .data.forest_block_types
-                0x000000000000311c       0x2b src/c/modules/pokemon/pokemon.c.33.o
-                0x000000000000311c                forest_block_types
+                0x0000000000003190       0x2b src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000003190                forest_block_types
  .data.replacement_blocks
-                0x0000000000003147        0x5 src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000003147                replacement_blocks
+                0x00000000000031bb        0x5 src/c/modules/pokemon/pokemon.c.33.o
+                0x00000000000031bb                replacement_blocks
  .data.forest_blocks
-                0x000000000000314c       0xac src/c/modules/pokemon/pokemon.c.33.o
-                0x000000000000314c                forest_blocks
+                0x00000000000031c0       0xac src/c/modules/pokemon/pokemon.c.33.o
+                0x00000000000031c0                forest_blocks
  .data.route_1_block_types
-                0x00000000000031f8       0x20 src/c/modules/pokemon/pokemon.c.33.o
-                0x00000000000031f8                route_1_block_types
+                0x000000000000326c       0x20 src/c/modules/pokemon/pokemon.c.33.o
+                0x000000000000326c                route_1_block_types
  .data.route_2_blocks
-                0x0000000000003218       0xa4 src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000003218                route_2_blocks
+                0x000000000000328c       0xa4 src/c/modules/pokemon/pokemon.c.33.o
+                0x000000000000328c                route_2_blocks
  .data.national_park_block_types
-                0x00000000000032bc       0x56 src/c/modules/pokemon/pokemon.c.33.o
-                0x00000000000032bc                national_park_block_types
+                0x0000000000003330       0x56 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000003330                national_park_block_types
  .data.bw_palette
-                0x0000000000003312        0x4 src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000003312                bw_palette
+                0x0000000000003386        0x4 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000003386                bw_palette
  .data.route_1_blocks
-                0x0000000000003316       0x80 src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000003316                route_1_blocks
+                0x000000000000338a       0x80 src/c/modules/pokemon/pokemon.c.33.o
+                0x000000000000338a                route_1_blocks
  .data.route_2_chunks
-                0x0000000000003396       0x88 src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000003396                route_2_chunks
- *fill*         0x000000000000341e        0x2 
+                0x000000000000340a       0x88 src/c/modules/pokemon/pokemon.c.33.o
+                0x000000000000340a                route_2_chunks
+ *fill*         0x0000000000003492        0x2 
  .data.map_files
-                0x0000000000003420       0x14 src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000003420                map_files
+                0x0000000000003494       0x14 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000003494                map_files
  .data.cave_chunks
-                0x0000000000003434       0x88 src/c/modules/pokemon/pokemon.c.33.o
-                0x0000000000003434                cave_chunks
+                0x00000000000034a8       0x88 src/c/modules/pokemon/pokemon.c.33.o
+                0x00000000000034a8                cave_chunks
  .data.s_route_num
-                0x00000000000034bc        0x1 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000003530        0x1 src/c/modules/pokemon/pokemon.c.33.o
  .data.national_park_chunks
-                0x00000000000034bd       0xec src/c/modules/pokemon/pokemon.c.33.o
-                0x00000000000034bd                national_park_chunks
+                0x0000000000003531       0xec src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000003531                national_park_chunks
 
-.igot.plt       0x00000000000035ac        0x0
+.igot.plt       0x0000000000003620        0x0
  .igot.plt      0x0000000000000000        0x0 /home/linksky/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.bss            0x00000000000035ac       0x94
+.bss            0x0000000000003620       0x94
  *(.bss)
  *(.bss.*)
  .bss.s_min_endpoint
-                0x00000000000035ac        0x4 src/c/modules/main_window.c.33.o
+                0x0000000000003620        0x4 src/c/modules/main_window.c.33.o
  .bss.s_hour_rect
-                0x00000000000035b0        0x8 src/c/modules/main_window.c.33.o
+                0x0000000000003624        0x8 src/c/modules/main_window.c.33.o
  .bss.s_inner_rect_white
-                0x00000000000035b8        0x8 src/c/modules/main_window.c.33.o
+                0x000000000000362c        0x8 src/c/modules/main_window.c.33.o
  .bss.s_screen_rect
-                0x00000000000035c0        0x8 src/c/modules/main_window.c.33.o
+                0x0000000000003634        0x8 src/c/modules/main_window.c.33.o
  .bss.s_adjusted_screen_rect
-                0x00000000000035c8        0x8 src/c/modules/main_window.c.33.o
+                0x000000000000363c        0x8 src/c/modules/main_window.c.33.o
  .bss.s_hour_angle
-                0x00000000000035d0        0x4 src/c/modules/main_window.c.33.o
+                0x0000000000003644        0x4 src/c/modules/main_window.c.33.o
  .bss.s_frame_timer
-                0x00000000000035d4        0x4 src/c/modules/main_window.c.33.o
+                0x0000000000003648        0x4 src/c/modules/main_window.c.33.o
  .bss.s_minute_angle
-                0x00000000000035d8        0x4 src/c/modules/main_window.c.33.o
- .bss.s_window  0x00000000000035dc        0x4 src/c/modules/main_window.c.33.o
+                0x000000000000364c        0x4 src/c/modules/main_window.c.33.o
+ .bss.s_window  0x0000000000003650        0x4 src/c/modules/main_window.c.33.o
  .bss.s_inner_rect
-                0x00000000000035e0        0x8 src/c/modules/main_window.c.33.o
+                0x0000000000003654        0x8 src/c/modules/main_window.c.33.o
  .bss.s_foreground_layer
-                0x00000000000035e8        0x4 src/c/modules/main_window.c.33.o
+                0x000000000000365c        0x4 src/c/modules/main_window.c.33.o
  .bss.s_graphics
-                0x00000000000035ec        0x4 src/c/modules/main_window.c.33.o
- .bss.s_min     0x00000000000035f0        0x1 src/c/modules/main_window.c.33.o
- .bss.s_hour    0x00000000000035f1        0x1 src/c/modules/main_window.c.33.o
+                0x0000000000003660        0x4 src/c/modules/main_window.c.33.o
+ .bss.s_min     0x0000000000003664        0x1 src/c/modules/main_window.c.33.o
+ .bss.s_hour    0x0000000000003665        0x1 src/c/modules/main_window.c.33.o
  .bss.s_hour_endpoint
-                0x00000000000035f2        0x4 src/c/modules/main_window.c.33.o
+                0x0000000000003666        0x4 src/c/modules/main_window.c.33.o
  .bss.s_anim_offset
-                0x00000000000035f6        0x1 src/c/modules/pokemon/animations.c.33.o
+                0x000000000000366a        0x1 src/c/modules/pokemon/animations.c.33.o
  .bss.s_anim_frame
-                0x00000000000035f7        0x1 src/c/modules/pokemon/animations.c.33.o
+                0x000000000000366b        0x1 src/c/modules/pokemon/animations.c.33.o
  .bss.s_anim_bank
-                0x00000000000035f8        0x1 src/c/modules/pokemon/animations.c.33.o
- *fill*         0x00000000000035f9        0x3 
+                0x000000000000366c        0x1 src/c/modules/pokemon/animations.c.33.o
+ *fill*         0x000000000000366d        0x3 
  .bss.s_world_map
-                0x00000000000035fc        0x4 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000003670        0x4 src/c/modules/pokemon/pokemon.c.33.o
  .bss.s_player_step
-                0x0000000000003600        0x2 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000003674        0x2 src/c/modules/pokemon/pokemon.c.33.o
  .bss.s_target_y
-                0x0000000000003602        0x2 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000003676        0x2 src/c/modules/pokemon/pokemon.c.33.o
  .bss.s_atomic_player_x
-                0x0000000000003604        0x2 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000003678        0x2 src/c/modules/pokemon/pokemon.c.33.o
  .bss.s_atomic_player_y
-                0x0000000000003606        0x2 src/c/modules/pokemon/pokemon.c.33.o
+                0x000000000000367a        0x2 src/c/modules/pokemon/pokemon.c.33.o
  .bss.s_target_x
-                0x0000000000003608        0x2 src/c/modules/pokemon/pokemon.c.33.o
+                0x000000000000367c        0x2 src/c/modules/pokemon/pokemon.c.33.o
  .bss.s_step_frame
-                0x000000000000360a        0x1 src/c/modules/pokemon/pokemon.c.33.o
+                0x000000000000367e        0x1 src/c/modules/pokemon/pokemon.c.33.o
  .bss.s_player_sprite_x
-                0x000000000000360b        0x1 src/c/modules/pokemon/pokemon.c.33.o
+                0x000000000000367f        0x1 src/c/modules/pokemon/pokemon.c.33.o
  .bss.s_flip_walk
-                0x000000000000360c        0x1 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000003680        0x1 src/c/modules/pokemon/pokemon.c.33.o
  .bss.s_player_sprite_y
-                0x000000000000360d        0x1 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000003681        0x1 src/c/modules/pokemon/pokemon.c.33.o
  .bss.s_player_mode
-                0x000000000000360e        0x1 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000003682        0x1 src/c/modules/pokemon/pokemon.c.33.o
  .bss.s_walk_frame
-                0x000000000000360f        0x1 src/c/modules/pokemon/pokemon.c.33.o
- .bss.s_warp_x  0x0000000000003610        0x2 src/c/modules/pokemon/pokemon.c.33.o
- .bss.s_warp_y  0x0000000000003612        0x2 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000003683        0x1 src/c/modules/pokemon/pokemon.c.33.o
+ .bss.s_warp_x  0x0000000000003684        0x2 src/c/modules/pokemon/pokemon.c.33.o
+ .bss.s_warp_y  0x0000000000003686        0x2 src/c/modules/pokemon/pokemon.c.33.o
  .bss.s_warp_route
-                0x0000000000003614        0x1 src/c/modules/pokemon/pokemon.c.33.o
- *fill*         0x0000000000003615        0x1 
+                0x0000000000003688        0x1 src/c/modules/pokemon/pokemon.c.33.o
+ *fill*         0x0000000000003689        0x1 
  .bss.s_player_y
-                0x0000000000003616        0x2 src/c/modules/pokemon/pokemon.c.33.o
+                0x000000000000368a        0x2 src/c/modules/pokemon/pokemon.c.33.o
  .bss.s_can_move
-                0x0000000000003618        0x1 src/c/modules/pokemon/pokemon.c.33.o
- *fill*         0x0000000000003619        0x1 
+                0x000000000000368c        0x1 src/c/modules/pokemon/pokemon.c.33.o
+ *fill*         0x000000000000368d        0x1 
  .bss.s_atomic_player_step
-                0x000000000000361a        0x2 src/c/modules/pokemon/pokemon.c.33.o
+                0x000000000000368e        0x2 src/c/modules/pokemon/pokemon.c.33.o
  .bss.s_cur_bg_palettes
-                0x000000000000361c       0x20 src/c/modules/pokemon/pokemon.c.33.o
+                0x0000000000003690       0x20 src/c/modules/pokemon/pokemon.c.33.o
  .bss.s_player_x
-                0x000000000000363c        0x2 src/c/modules/pokemon/pokemon.c.33.o
+                0x00000000000036b0        0x2 src/c/modules/pokemon/pokemon.c.33.o
  .bss.s_player_sprite
-                0x000000000000363e        0x1 src/c/modules/pokemon/pokemon.c.33.o
+                0x00000000000036b2        0x1 src/c/modules/pokemon/pokemon.c.33.o
  .bss.s_game_started
-                0x000000000000363f        0x1 src/c/modules/pokemon/pokemon.c.33.o
+                0x00000000000036b3        0x1 src/c/modules/pokemon/pokemon.c.33.o
 
 DISCARD
  libc.a(*)
@@ -2027,32 +2030,32 @@ OUTPUT(/mnt/c/Users/harri/Documents/pebble/pebblemon-watchface/build/aplite/pebb
  .comment       0x0000000000000000       0x4f src/message_keys.auto.c.33.o
  .comment       0x0000000000000000       0x4f /home/linksky/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
 
-.debug_info     0x0000000000000000     0x868a
+.debug_info     0x0000000000000000     0x8859
  .debug_info    0x0000000000000000       0xf6 src/c/main.c.33.o
  .debug_info    0x00000000000000f6     0x1654 src/c/modules/main_window.c.33.o
  .debug_info    0x000000000000174a     0x3757 src/c/modules/pebble-gbc-graphics/pebble-gbc-graphics.c.33.o
- .debug_info    0x0000000000004ea1      0x58b src/c/modules/pokemon/animations.c.33.o
- .debug_info    0x000000000000542c     0x2da0 src/c/modules/pokemon/pokemon.c.33.o
- .debug_info    0x00000000000081cc      0x31a aplite/appinfo.auto.c.33.o
- .debug_info    0x00000000000084e6      0x123 aplite/src/resource_ids.auto.c.33.o
- .debug_info    0x0000000000008609       0x81 src/message_keys.auto.c.33.o
+ .debug_info    0x0000000000004ea1      0x711 src/c/modules/pokemon/animations.c.33.o
+ .debug_info    0x00000000000055b2     0x2de9 src/c/modules/pokemon/pokemon.c.33.o
+ .debug_info    0x000000000000839b      0x31a aplite/appinfo.auto.c.33.o
+ .debug_info    0x00000000000086b5      0x123 aplite/src/resource_ids.auto.c.33.o
+ .debug_info    0x00000000000087d8       0x81 src/message_keys.auto.c.33.o
 
-.debug_abbrev   0x0000000000000000     0x102d
+.debug_abbrev   0x0000000000000000     0x105b
  .debug_abbrev  0x0000000000000000       0x9a src/c/main.c.33.o
  .debug_abbrev  0x000000000000009a      0x359 src/c/modules/main_window.c.33.o
  .debug_abbrev  0x00000000000003f3      0x4d1 src/c/modules/pebble-gbc-graphics/pebble-gbc-graphics.c.33.o
- .debug_abbrev  0x00000000000008c4      0x193 src/c/modules/pokemon/animations.c.33.o
- .debug_abbrev  0x0000000000000a57      0x4b0 src/c/modules/pokemon/pokemon.c.33.o
- .debug_abbrev  0x0000000000000f07       0x9e aplite/appinfo.auto.c.33.o
- .debug_abbrev  0x0000000000000fa5       0x44 aplite/src/resource_ids.auto.c.33.o
- .debug_abbrev  0x0000000000000fe9       0x44 src/message_keys.auto.c.33.o
+ .debug_abbrev  0x00000000000008c4      0x1c1 src/c/modules/pokemon/animations.c.33.o
+ .debug_abbrev  0x0000000000000a85      0x4b0 src/c/modules/pokemon/pokemon.c.33.o
+ .debug_abbrev  0x0000000000000f35       0x9e aplite/appinfo.auto.c.33.o
+ .debug_abbrev  0x0000000000000fd3       0x44 aplite/src/resource_ids.auto.c.33.o
+ .debug_abbrev  0x0000000000001017       0x44 src/message_keys.auto.c.33.o
 
-.debug_loc      0x0000000000000000     0x48ce
+.debug_loc      0x0000000000000000     0x4909
  .debug_loc     0x0000000000000000       0x20 src/c/main.c.33.o
  .debug_loc     0x0000000000000020      0x3e0 src/c/modules/main_window.c.33.o
  .debug_loc     0x0000000000000400     0x305e src/c/modules/pebble-gbc-graphics/pebble-gbc-graphics.c.33.o
- .debug_loc     0x000000000000345e      0x160 src/c/modules/pokemon/animations.c.33.o
- .debug_loc     0x00000000000035be     0x1310 src/c/modules/pokemon/pokemon.c.33.o
+ .debug_loc     0x000000000000345e      0x19b src/c/modules/pokemon/animations.c.33.o
+ .debug_loc     0x00000000000035f9     0x1310 src/c/modules/pokemon/pokemon.c.33.o
 
 .debug_aranges  0x0000000000000000      0x518
  .debug_aranges
@@ -2079,32 +2082,32 @@ OUTPUT(/mnt/c/Users/harri/Documents/pebble/pebblemon-watchface/build/aplite/pebb
  .debug_ranges  0x0000000000000690       0x30 src/c/modules/pokemon/animations.c.33.o
  .debug_ranges  0x00000000000006c0      0x4e8 src/c/modules/pokemon/pokemon.c.33.o
 
-.debug_line     0x0000000000000000     0x1d0f
+.debug_line     0x0000000000000000     0x1db2
  .debug_line    0x0000000000000000       0xb8 src/c/main.c.33.o
  .debug_line    0x00000000000000b8      0x3ae src/c/modules/main_window.c.33.o
  .debug_line    0x0000000000000466      0xc34 src/c/modules/pebble-gbc-graphics/pebble-gbc-graphics.c.33.o
- .debug_line    0x000000000000109a      0x225 src/c/modules/pokemon/animations.c.33.o
- .debug_line    0x00000000000012bf      0x79a src/c/modules/pokemon/pokemon.c.33.o
- .debug_line    0x0000000000001a59      0x123 aplite/appinfo.auto.c.33.o
- .debug_line    0x0000000000001b7c       0xcd aplite/src/resource_ids.auto.c.33.o
- .debug_line    0x0000000000001c49       0xc6 src/message_keys.auto.c.33.o
+ .debug_line    0x000000000000109a      0x2be src/c/modules/pokemon/animations.c.33.o
+ .debug_line    0x0000000000001358      0x7a4 src/c/modules/pokemon/pokemon.c.33.o
+ .debug_line    0x0000000000001afc      0x123 aplite/appinfo.auto.c.33.o
+ .debug_line    0x0000000000001c1f       0xcd aplite/src/resource_ids.auto.c.33.o
+ .debug_line    0x0000000000001cec       0xc6 src/message_keys.auto.c.33.o
 
-.debug_str      0x0000000000000000     0x29b4
+.debug_str      0x0000000000000000     0x29df
  .debug_str     0x0000000000000000       0xe5 src/c/main.c.33.o
                                         0x123 (size before relaxing)
  .debug_str     0x00000000000000e5      0x7b0 src/c/modules/main_window.c.33.o
                                         0x9e2 (size before relaxing)
  .debug_str     0x0000000000000895     0x130c src/c/modules/pebble-gbc-graphics/pebble-gbc-graphics.c.33.o
                                        0x1798 (size before relaxing)
- .debug_str     0x0000000000001ba1      0x113 src/c/modules/pokemon/animations.c.33.o
-                                        0x484 (size before relaxing)
- .debug_str     0x0000000000001cb4      0x96f src/c/modules/pokemon/pokemon.c.33.o
+ .debug_str     0x0000000000001ba1      0x13e src/c/modules/pokemon/animations.c.33.o
+                                        0x534 (size before relaxing)
+ .debug_str     0x0000000000001cdf      0x96f src/c/modules/pokemon/pokemon.c.33.o
                                        0x11ce (size before relaxing)
- .debug_str     0x0000000000002623      0x22f aplite/appinfo.auto.c.33.o
+ .debug_str     0x000000000000264e      0x22f aplite/appinfo.auto.c.33.o
                                         0x32c (size before relaxing)
- .debug_str     0x0000000000002852      0x138 aplite/src/resource_ids.auto.c.33.o
+ .debug_str     0x000000000000287d      0x138 aplite/src/resource_ids.auto.c.33.o
                                         0x20f (size before relaxing)
- .debug_str     0x000000000000298a       0x2a src/message_keys.auto.c.33.o
+ .debug_str     0x00000000000029b5       0x2a src/message_keys.auto.c.33.o
                                         0x101 (size before relaxing)
 
 .debug_frame    0x0000000000000000      0xbac
