@@ -377,7 +377,6 @@ void Pokemon_initialize(GBC_Graphics *graphics) {
   s_atomic_player_y = s_player_y;
   load_game(graphics);
   s_game_started = true;
-  // something isn't quite right
 }
 
 static void load_blocks_in_direction(GBC_Graphics *graphics, PlayerDirection direction) {
