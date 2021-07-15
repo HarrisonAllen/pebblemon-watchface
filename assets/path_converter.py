@@ -22,5 +22,19 @@ def reduce_path_size(filename, out_filename):
             with open(out_filename, 'ab') as of:
                 of.write(bytes([b]))
 
+def convert_locations_to_bin(in_file, out_file):
+    open(out_file, 'wb').close()
+
+    with open(in_file, 'r') as i_f:
+        data = i_f.readline()
+        while data:
+            int_data = [int(i) for i in data.strip().split(',')]
+            byte_data = bytes(int_data)
+            print(f'{data}->{int_data}')
+            with open(out_file, 'ab') as of:
+                of.write(byte_data)
+            data = i_f.readline()
+
 if __name__ == "__main__":
-    reduce_path_size('assets/moves.txt', 'assets/path.bin')
+    # reduce_path_size('assets/moves.txt', 'assets/path.bin')
+    convert_locations_to_bin('assets/locations.txt', 'assets/Locations.bin')
