@@ -20,16 +20,10 @@
 #define TILE_BANK_ANIMS 0
 #define TILE_OFFSET_ANIMS 220
 
-#define DEMO_MODE true
-#define RAND_SPRITES false
+#define DEMO_MODE false
 
 typedef struct {
-    uint8_t route_num;
-    uint16_t player_x;
-    uint16_t player_y;
     uint8_t player_sprite;
-    uint8_t player_direction;
-    time_t last_save;
     uint16_t player_step;
 } PokemonSaveData;
 
