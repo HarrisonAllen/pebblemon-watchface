@@ -72,8 +72,8 @@
         },
         {
           "type": "raw",
-          "name": "DATA_PATH",
-          "file": "data/Path.bin"
+          "name": "DATA_LOCATIONS",
+          "file": "data/Locations.bin"
         }
       ]
     }
