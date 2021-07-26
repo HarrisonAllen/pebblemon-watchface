@@ -12,7 +12,10 @@ typedef struct ClaySettings {
     GColor BackgroundTopColor;
     GColor BackgroundBottomcolor;
     GColor HourColor;
+    GColor HourOutlineColor;
     GColor MinuteColor;
+    GColor MinuteOutlineColor;
+    GColor MiddleBarColor;
     bool Analog;
     bool HourTickmarks;
     bool ShakeSprite;
