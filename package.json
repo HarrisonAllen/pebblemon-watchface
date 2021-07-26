@@ -30,7 +30,10 @@
       "BackgroundTopColor",
       "BackgroundBottomColor",
       "HourColor",
+      "HourOutlineColor",
       "MinuteColor",
+      "MinuteOutlineColor",
+      "MiddleBarColor",
       "TimeStyle",
       "HourTickmarks",
       "ShakeSpriteChange",
@@ -88,6 +91,18 @@
           "type": "raw",
           "name": "DATA_LOCATIONS",
           "file": "data/Locations.bin"
+        },
+        {
+          "type": "font",
+          "name": "FONT_DIGITAL_22",
+          "file": "fonts/pebblemon-time-digital.ttf",
+          "characterRegex": "[0-9]"
+        },
+        {
+          "type": "font",
+          "name": "FONT_OUTLINES_23",
+          "file": "fonts/pebblemon-time-outlines.ttf",
+          "characterRegex": "[0-9]"
         }
       ]
     }
