@@ -2,9 +2,16 @@
   "name": "pebblemon-watchface",
   "author": "Harrison Allen",
   "version": "1.0.0",
-  "keywords": ["pebble-app"],
+  "keywords": [
+    "pebble-app"
+  ],
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "pebble-clay": "^1.0.4"
+  },
+  "capabilities": [
+    "configurable"
+  ],
   "pebble": {
     "displayName": "Pebblemon Time",
     "uuid": "2b5ff5d9-75a2-4f8e-866d-015216a3e45c",
@@ -20,7 +27,14 @@
       "watchface": true
     },
     "messageKeys": [
-      "dummy"
+      "BackgroundTopColor",
+      "BackgroundBottomColor",
+      "HourColor",
+      "MinuteColor",
+      "TimeStyle",
+      "HourTickmarks",
+      "ShakeSpriteChange",
+      "BatteryBar"
     ],
     "resources": {
       "media": [
