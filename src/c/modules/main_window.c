@@ -14,6 +14,7 @@ static GRect s_hour_rect;
 static GRect s_inner_rect;
 static GRect s_inner_rect_white;
 static GPoint s_hour_endpoint, s_min_endpoint;
+static GFont s_outline_font, s_base_font;
 
 ClaySettings settings;
 
@@ -70,15 +71,21 @@ static void will_focus_handler(bool in_focus) {
   }
 }
 
+static void draw_time_text(Layer *layer, GContext *ctx, char *text, GRect bounds, bool hour) {
+
+  graphics_context_set_text_color(ctx, hour ? settings.HourOutlineColor : settings.MinuteOutlineColor);
+  graphics_draw_text(ctx, text, s_outline_font, bounds, GTextOverflowModeWordWrap, 
+                     hour ? GTextAlignmentRight : GTextAlignmentLeft, NULL);
+
+  bounds.origin.x -= hour ? 1 : 0;
+  bounds.origin.y += 1;
+  
+  graphics_context_set_text_color(ctx, hour ? settings.HourColor : settings.MinuteColor);
+  graphics_draw_text(ctx, text, s_base_font, bounds, GTextOverflowModeWordWrap, 
+                     hour ? GTextAlignmentRight : GTextAlignmentLeft, NULL);
+}
+
 static void foreground_update_proc(Layer *layer, GContext *ctx) {
-  // determine what direction the hands will go in
-  s_minute_angle = TRIG_MAX_ANGLE * s_min / 60;
-  s_hour_angle = TRIG_MAX_ANGLE * s_hour / 12 + TRIG_MAX_ANGLE / 12 * s_min / 60;
-
-  // determine where they should end
-  s_hour_endpoint = gpoint_from_polar(s_hour_rect, GOvalScaleModeFitCircle, s_hour_angle);
-  s_min_endpoint = gpoint_from_polar(s_screen_rect, GOvalScaleModeFitCircle, s_minute_angle);
-
   GRect bounds = layer_get_bounds(layer);
   graphics_context_set_antialiased(ctx, false);
 
@@ -95,7 +102,7 @@ static void foreground_update_proc(Layer *layer, GContext *ctx) {
 
   // On round, draw the black bar that connects the halves (not visible on rectangular watches)
 #if defined(PBL_ROUND)
-  graphics_context_set_stroke_color(ctx, GColorBlack);
+  graphics_context_set_stroke_color(ctx, settings.MiddleBarColor);
   graphics_context_set_stroke_width(ctx, 4);
   graphics_draw_line(ctx, GPoint(0, center.y), GPoint(18, center.y));
   graphics_draw_line(ctx, GPoint(180, center.y), GPoint(180-18, center.y));
@@ -171,48 +178,91 @@ static void foreground_update_proc(Layer *layer, GContext *ctx) {
     }
   }
 
-  // Draw the white outline for the minute hand
-  GPoint min_startpoint;
-  graphics_context_set_stroke_width(ctx, 4);
-  graphics_context_set_stroke_color(ctx, GColorWhite);
-  min_startpoint = gpoint_from_polar(s_inner_rect_white, GOvalScaleModeFitCircle, s_minute_angle + DEG_TO_TRIGANGLE(-48));
-  graphics_draw_line(ctx, min_startpoint, s_min_endpoint);
-  min_startpoint = gpoint_from_polar(s_inner_rect_white, GOvalScaleModeFitCircle, s_minute_angle + DEG_TO_TRIGANGLE(48));
-  graphics_draw_line(ctx, min_startpoint, s_min_endpoint);
-  // Then draw the actual minute hand
-  graphics_context_set_stroke_color(ctx, settings.MinuteColor);
-  graphics_context_set_stroke_width(ctx, 2);
-  for (int8_t i = -45; i < 46; i+=9) {
-    min_startpoint = gpoint_from_polar(s_inner_rect, GOvalScaleModeFitCircle, s_minute_angle + DEG_TO_TRIGANGLE(i));
-    graphics_draw_line(ctx, min_startpoint, s_min_endpoint);
-  }
-  
-  // Draw the white outline for the hour hand
-  GPoint hour_startpoint;
-  graphics_context_set_stroke_width(ctx, 4);
-  graphics_context_set_stroke_color(ctx, GColorWhite);
-  hour_startpoint = gpoint_from_polar(s_inner_rect_white, GOvalScaleModeFitCircle, s_hour_angle + DEG_TO_TRIGANGLE(-48));
-  graphics_draw_line(ctx, hour_startpoint, s_hour_endpoint);
-  hour_startpoint = gpoint_from_polar(s_inner_rect_white, GOvalScaleModeFitCircle, s_hour_angle + DEG_TO_TRIGANGLE(48));
-  graphics_draw_line(ctx, hour_startpoint, s_hour_endpoint);
-  // And draw the actual hour hand
-  graphics_context_set_stroke_color(ctx, settings.HourColor);
-  graphics_context_set_stroke_width(ctx, 2);
-  for (int8_t i = -45; i < 46; i+=9) {
-    hour_startpoint = gpoint_from_polar(s_inner_rect, GOvalScaleModeFitCircle, s_hour_angle + DEG_TO_TRIGANGLE(i));
-    graphics_draw_line(ctx, hour_startpoint, s_hour_endpoint);
-  }
+  if (settings.Analog) {
+    // determine what direction the hands will go in
+    s_minute_angle = TRIG_MAX_ANGLE * s_min / 60;
+    s_hour_angle = TRIG_MAX_ANGLE * s_hour / 12 + TRIG_MAX_ANGLE / 12 * s_min / 60;
 
-  // Draw the inner circles 
-  graphics_context_set_stroke_color(ctx, GColorWhite);
-  graphics_context_set_stroke_width(ctx, 2);
-  graphics_draw_circle(ctx, center, 17);
-  graphics_context_set_stroke_color(ctx, GColorBlack);
-  graphics_context_set_stroke_width(ctx, 1);
-  graphics_draw_circle(ctx, center, 15);
-  graphics_context_set_stroke_color(ctx, GColorBlack);
-  graphics_context_set_stroke_width(ctx, 1);
-  graphics_draw_circle(ctx, center, 19);
+    // determine where they should end
+    s_hour_endpoint = gpoint_from_polar(s_hour_rect, GOvalScaleModeFitCircle, s_hour_angle);
+    s_min_endpoint = gpoint_from_polar(s_screen_rect, GOvalScaleModeFitCircle, s_minute_angle);
+
+    // Draw the white outline for the minute hand
+    GPoint min_startpoint;
+    graphics_context_set_stroke_width(ctx, 4);
+    graphics_context_set_stroke_color(ctx, settings.MinuteOutlineColor);
+    min_startpoint = gpoint_from_polar(s_inner_rect_white, GOvalScaleModeFitCircle, s_minute_angle + DEG_TO_TRIGANGLE(-48));
+    graphics_draw_line(ctx, min_startpoint, s_min_endpoint);
+    min_startpoint = gpoint_from_polar(s_inner_rect_white, GOvalScaleModeFitCircle, s_minute_angle + DEG_TO_TRIGANGLE(48));
+    graphics_draw_line(ctx, min_startpoint, s_min_endpoint);
+    // Then draw the actual minute hand
+    graphics_context_set_stroke_color(ctx, settings.MinuteColor);
+    graphics_context_set_stroke_width(ctx, 2);
+    for (int8_t i = -45; i < 46; i+=9) {
+      min_startpoint = gpoint_from_polar(s_inner_rect, GOvalScaleModeFitCircle, s_minute_angle + DEG_TO_TRIGANGLE(i));
+      graphics_draw_line(ctx, min_startpoint, s_min_endpoint);
+    }
+    
+    // Draw the white outline for the hour hand
+    GPoint hour_startpoint;
+    graphics_context_set_stroke_width(ctx, 4);
+    graphics_context_set_stroke_color(ctx, settings.HourOutlineColor);
+    hour_startpoint = gpoint_from_polar(s_inner_rect_white, GOvalScaleModeFitCircle, s_hour_angle + DEG_TO_TRIGANGLE(-48));
+    graphics_draw_line(ctx, hour_startpoint, s_hour_endpoint);
+    hour_startpoint = gpoint_from_polar(s_inner_rect_white, GOvalScaleModeFitCircle, s_hour_angle + DEG_TO_TRIGANGLE(48));
+    graphics_draw_line(ctx, hour_startpoint, s_hour_endpoint);
+    // And draw the actual hour hand
+    graphics_context_set_stroke_color(ctx, settings.HourColor);
+    graphics_context_set_stroke_width(ctx, 2);
+    for (int8_t i = -45; i < 46; i+=9) {
+      hour_startpoint = gpoint_from_polar(s_inner_rect, GOvalScaleModeFitCircle, s_hour_angle + DEG_TO_TRIGANGLE(i));
+      graphics_draw_line(ctx, hour_startpoint, s_hour_endpoint);
+    }
+
+    // Draw the inner circles 
+    graphics_context_set_stroke_color(ctx, GColorWhite);
+    graphics_context_set_stroke_width(ctx, 2);
+    graphics_draw_circle(ctx, center, 17);
+    graphics_context_set_stroke_color(ctx, GColorBlack);
+    graphics_context_set_stroke_width(ctx, 1);
+    graphics_draw_circle(ctx, center, 15);
+    graphics_context_set_stroke_color(ctx, GColorBlack);
+    graphics_context_set_stroke_width(ctx, 1);
+    graphics_draw_circle(ctx, center, 19);
+  } else {    
+    time_t temp = time(NULL);
+    struct tm *tick_time = localtime(&temp);
+
+    // Write the current hours and minutes into a buffer
+    static char s_buffer[8];
+    strftime(s_buffer, sizeof(s_buffer), clock_is_24h_style() ?
+                                            "%H%M" : "%I%M", tick_time);
+
+    char time_buffer[2] = "\0\0";
+
+    // Make a box large enough for one character
+    GRect layer_bounds = layer_get_bounds(layer);
+    GRect font_bounds = GRect(layer_bounds.size.w / 2 - 68, layer_bounds.size.h / 2 - 10, 30, 30);
+
+    // Draw first hour digit
+    time_buffer[0] = s_buffer[0];
+    draw_time_text(layer, ctx, time_buffer, font_bounds, true);
+
+    // Draw second hour digit
+    time_buffer[0] = s_buffer[1];
+    font_bounds.origin.x = layer_bounds.size.w / 2 - 40;
+    draw_time_text(layer, ctx, time_buffer, font_bounds, true);
+    
+    // Draw first minute digit
+    time_buffer[0] = s_buffer[2];
+    font_bounds.origin.x =layer_bounds.size.w / 2 + 8;
+    draw_time_text(layer, ctx, time_buffer, font_bounds, false);
+    
+    // Draw second minute digit
+    time_buffer[0] = s_buffer[3];
+    font_bounds.origin.x =layer_bounds.size.w / 2 + 36;
+    draw_time_text(layer, ctx, time_buffer, font_bounds, false);
+  }
 }
 
 
@@ -220,6 +270,9 @@ static void window_load(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
   GRect bounds = layer_get_bounds(window_layer);
   window_set_background_color(window, GColorBlack);
+
+  s_outline_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_OUTLINES_23));
+  s_base_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_DIGITAL_22));
 
   s_graphics = GBC_Graphics_ctor(window, 1);
   load_game();
@@ -235,6 +288,9 @@ static void window_load(Window *window) {
 static void window_unload(Window *window) {
   GBC_Graphics_destroy(s_graphics);
 
+  fonts_unload_custom_font(s_outline_font);
+  fonts_unload_custom_font(s_base_font);
+
   unload_game();
 
   layer_destroy(s_foreground_layer);
@@ -246,7 +302,10 @@ static void default_settings() {
   settings.BackgroundBottomcolor = GColorWhite;
   settings.BackgroundTopColor = PBL_IF_COLOR_ELSE(GColorRed, GColorLightGray);
   settings.HourColor = PBL_IF_COLOR_ELSE(GColorRed, GColorBlack);
+  settings.HourOutlineColor = GColorWhite;
   settings.MinuteColor = GColorBlack;
+  settings.MinuteOutlineColor = GColorWhite;
+  settings.MiddleBarColor = GColorBlack;
   settings.Analog = true;
   settings.HourTickmarks = true;
   settings.ShakeSprite = true;
@@ -282,9 +341,24 @@ static void inbox_received_handler(DictionaryIterator *iter, void *context) {
     settings.HourColor = GColorFromHEX(hour_color_t->value->int32);
   }
 
+  Tuple *hour_outline_color_t = dict_find(iter, MESSAGE_KEY_HourOutlineColor);
+  if(hour_outline_color_t) {
+    settings.HourOutlineColor = GColorFromHEX(hour_outline_color_t->value->int32);
+  }
+
   Tuple *minute_color_t = dict_find(iter, MESSAGE_KEY_MinuteColor);
   if(minute_color_t) {
     settings.MinuteColor = GColorFromHEX(minute_color_t->value->int32);
+  }
+
+  Tuple *minute_outline_color_t = dict_find(iter, MESSAGE_KEY_MinuteOutlineColor);
+  if(minute_outline_color_t) {
+    settings.MinuteOutlineColor = GColorFromHEX(minute_outline_color_t->value->int32);
+  }
+
+  Tuple *middle_bar_color_t = dict_find(iter, MESSAGE_KEY_MiddleBarColor);
+  if(middle_bar_color_t) {
+    settings.MiddleBarColor = GColorFromHEX(middle_bar_color_t->value->int32);
   }
 
   Tuple *time_style_t = dict_find(iter, MESSAGE_KEY_TimeStyle);
