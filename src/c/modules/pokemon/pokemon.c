@@ -357,11 +357,10 @@ void Pokemon_initialize(GBC_Graphics *graphics) {
 
   PokemonSaveData data;
   if (load(&data)) {
-    s_player_sprite = data.player_sprite;
     s_player_step = data.player_step;
-  } else {
-    new_player_sprites(graphics);
   }
+
+  new_player_sprites(graphics);
 
   if (DEMO_MODE){
     s_player_step = rand()%(get_num_locations()/3);
@@ -722,7 +721,6 @@ static void play(GBC_Graphics *graphics) {
 
 static void save() {
   PokemonSaveData data = (PokemonSaveData) {
-    .player_sprite = s_player_sprite,
     .player_step = s_atomic_player_step,
   };
   persist_write_data(SAVE_KEY, &data, sizeof(PokemonSaveData));

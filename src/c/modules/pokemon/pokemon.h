@@ -23,7 +23,6 @@
 #define DEMO_MODE false
 
 typedef struct {
-    uint8_t player_sprite;
     uint16_t player_step;
 } PokemonSaveData;
 
