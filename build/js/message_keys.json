@@ -1,3 +1,10 @@
 {
-    "dummy": 10000
+    "BackgroundBottomColor": 10001,
+    "BackgroundTopColor": 10000,
+    "BatteryBar": 10007,
+    "HourColor": 10002,
+    "HourTickmarks": 10005,
+    "MinuteColor": 10003,
+    "ShakeSpriteChange": 10006,
+    "TimeStyle": 10004
 }

@@ -8,15 +8,31 @@
     "displayName": "Pebblemon Time", 
     "name": "pebblemon-watchface", 
     "messageKeys": {
-        "dummy": 10000
+        "ShakeSpriteChange": 10006, 
+        "BackgroundTopColor": 10000, 
+        "TimeStyle": 10004, 
+        "HourTickmarks": 10005, 
+        "HourColor": 10002, 
+        "BatteryBar": 10007, 
+        "MinuteColor": 10003, 
+        "BackgroundBottomColor": 10001
     }, 
     "companyName": "Harrison Allen", 
     "enableMultiJS": true, 
     "versionLabel": "1.0", 
-    "capabilities": [], 
+    "capabilities": [
+        "configurable"
+    ], 
     "sdkVersion": "3", 
     "appKeys": {
-        "dummy": 10000
+        "ShakeSpriteChange": 10006, 
+        "BackgroundTopColor": 10000, 
+        "TimeStyle": 10004, 
+        "HourTickmarks": 10005, 
+        "HourColor": 10002, 
+        "BatteryBar": 10007, 
+        "MinuteColor": 10003, 
+        "BackgroundBottomColor": 10001
     }, 
     "longName": "Pebblemon Time", 
     "shortName": "Pebblemon Time", 

@@ -6,4 +6,11 @@
 // DO NOT MODIFY - CHANGES WILL BE OVERWRITTEN
 //
 
-extern uint32_t MESSAGE_KEY_dummy;
+extern uint32_t MESSAGE_KEY_BackgroundBottomColor;
+extern uint32_t MESSAGE_KEY_BackgroundTopColor;
+extern uint32_t MESSAGE_KEY_BatteryBar;
+extern uint32_t MESSAGE_KEY_HourColor;
+extern uint32_t MESSAGE_KEY_HourTickmarks;
+extern uint32_t MESSAGE_KEY_MinuteColor;
+extern uint32_t MESSAGE_KEY_ShakeSpriteChange;
+extern uint32_t MESSAGE_KEY_TimeStyle;
