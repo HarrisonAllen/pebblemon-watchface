@@ -29,6 +29,15 @@ module.exports = [
           "label": "Bottom",
           "sunlight": false,
           "allowGray": true
+        },
+        {
+          "type": "color",
+          "messageKey": "MiddleBarColor",
+          "defaultValue": "0x000000",
+          "label": "Middle Bar Color",
+          "sunlight": false,
+          "allowGray": true,
+          "capabilities": ["ROUND"],
         }
       ]
     },
@@ -59,7 +68,15 @@ module.exports = [
           "type": "color",
           "messageKey": "HourColor",
           "defaultValue": "0xFF0000",
-          "label": "Hours Color",
+          "label": "Hour Color",
+          "sunlight": false,
+          "allowGray": false
+        },
+        {
+          "type": "color",
+          "messageKey": "HourOutlineColor",
+          "defaultValue": "0xFFFFFF",
+          "label": "Hour Outline Color",
           "sunlight": false,
           "allowGray": false
         },
@@ -67,7 +84,15 @@ module.exports = [
           "type": "color",
           "messageKey": "MinuteColor",
           "defaultValue": "0x000000",
-          "label": "Minutes Color",
+          "label": "Minute Color",
+          "sunlight": false,
+          "allowGray": false
+        },
+        {
+          "type": "color",
+          "messageKey": "MinuteOutlineColor",
+          "defaultValue": "0xFFFFFF",
+          "label": "Minute Outline Color",
           "sunlight": false,
           "allowGray": false
         },
